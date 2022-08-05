@@ -13,6 +13,7 @@ public class HocSinh implements Comparator<HocSinh> {
 
     private LopHoc lopHoc;
 
+
     static int count =0;
 
     public HocSinh(int id) {
@@ -24,7 +25,16 @@ public class HocSinh implements Comparator<HocSinh> {
         this.hoVaTen = hoVaTen;
         this.ngaySinh = ngaySinh;
         this.tenLop = tenLop;
+        this.lopHoc = lopHoc;
 
+    }
+
+    public HocSinh(int id, String hoVaTen, Date ngaySinh, String tenLop, LopHoc lopHoc) {
+        this.id = id;
+        this.hoVaTen = hoVaTen;
+        this.ngaySinh = ngaySinh;
+        this.tenLop = tenLop;
+        this.lopHoc = lopHoc;
     }
 
     public int getId() {
@@ -59,6 +69,14 @@ public class HocSinh implements Comparator<HocSinh> {
         this.tenLop = tenLop;
     }
 
+    public LopHoc getLopHoc() {
+        return lopHoc;
+    }
+
+    public void setLopHoc(LopHoc lopHoc) {
+        this.lopHoc = lopHoc;
+    }
+
     public static Date inputBirthday() {
         Scanner scanner = new Scanner(System.in);
         String birthDay = scanner.nextLine();
@@ -70,9 +88,11 @@ public class HocSinh implements Comparator<HocSinh> {
         System.out.println("Nhập họ và tên: ");
         hoVaTen = scanner.nextLine();
         System.out.println("Nhập ngày tháng năm sinh: ");
-        inputBirthday();
+        ngaySinh = inputBirthday();
 
     }
+
+
     @Override
     public int compare(HocSinh student1, HocSinh student2) {
         return student2.hoVaTen.compareTo(student1.hoVaTen);

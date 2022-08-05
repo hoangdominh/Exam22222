@@ -11,15 +11,20 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
+import static Model.HocSinh.inputBirthday;
+
 public class Main {
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        ArrayList< LopHoc> lopHocs = new ArrayList<>();
+        ArrayList<LopHoc> lopHocs = new ArrayList<>();
 
         lopHocs.add(new LopHoc("Lớp 1A","Nguyễn Thị Huyền"));
         lopHocs.add(new LopHoc("Lớp 1B","Nguyễn Thị Thơm"));
-        lopHocs.add(new LopHoc("Lớp 1A","Nguyễn Thị Lan"));
+        lopHocs.add(new LopHoc("Lớp 1C","Nguyễn Thị Lan"));
+        System.out.println(lopHocs);
 
         DanhSachHocSinh dshs = new DanhSachHocSinh();
         int luaChon =0;
@@ -51,9 +56,7 @@ public class Main {
                 dshs.suaThongTinHocSinh();
             }
             else if(luaChon == 4){
-                System.out.println("Nhập mã id học sinh mà bạn muốn xóa: "); int id = scanner.nextInt();
-                HocSinh hocSinh = new HocSinh(id);
-                dshs.xoaThongTinHocSinh(hocSinh);
+                dshs.xoaThongTinHocSinh();
 
             }else if(luaChon == 5){
                 System.out.println("Nhập tên học sinh mà bạn muốn tìm: ");String ten = scanner.nextLine();
@@ -70,19 +73,4 @@ public class Main {
         } while (luaChon!=0);
     }
 
-    public static Date inputBirthday() {
-        Scanner scanner = new Scanner(System.in);
-        String birthDay = scanner.nextLine();
-        Date ngaySinh = new Date(birthDay);
-        return ngaySinh;
-    }
-
-//    public static String convertStringToDate(){
-//        Scanner scanner = new Scanner(System.in);
-//        String ngaySing = scanner.nextLine();
-//        DateFormat df = new SimpleDateFormat(ngaySing);
-//        Date today = Calendar.getInstance().getTime();
-//        String dateToString = df.format(today);
-//        return (dateToString);
-//    }
 }

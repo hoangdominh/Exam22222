@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.HocSinh;
+import Model.LopHoc;
 import Model.SapXep;
 //import Model.SapXep;
 
@@ -9,7 +10,6 @@ import java.util.*;
 public class DanhSachHocSinh {
     private ArrayList<HocSinh> hocSinhList;
     Scanner scanner = new Scanner(System.in);
-
 
     public DanhSachHocSinh() {
         this.hocSinhList = new ArrayList<HocSinh>();
@@ -65,6 +65,7 @@ public class DanhSachHocSinh {
             System.out.println(hocSinh);
         }
 
+
     }
     //   Nhập ID học sinh cho sửa thông tin học sinh
     public void suaThongTinHocSinh(){
@@ -80,7 +81,8 @@ public class DanhSachHocSinh {
 
 //   Nhập ID học sinh cho xóa thông tin học sinh
 
-    public void xoaThongTinHocSinh(HocSinh hocSinh){
+    public void xoaThongTinHocSinh(){
+        System.out.println("Nhập mã id học sinh mà bạn muốn xóa: ");
         int id = Integer.parseInt(scanner.nextLine());
         for (HocSinh o : hocSinhList){
             if(o.getId()==(id)){

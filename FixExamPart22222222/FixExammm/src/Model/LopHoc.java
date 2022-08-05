@@ -42,7 +42,7 @@ public class LopHoc {
 
     @Override
     public String toString() {
-        return "lopHoc{" +
+        return "Lớp hoc{" +
                 "id=" + id +
                 ", tenLop='" + tenLop + '\'' +
                 ", tenGiaoVien='" + tenGiaoVien + '\'' +
